@@ -224,6 +224,192 @@ let resultVal = multiply(10, 40);
 console.log(resultVal);
 
 
+//class
+// OOPS: Object-Oriented Programing
+
+//template of js objects(property & method)
+
+class University {
+    //pre-defined method: that is used initialize value
+    constructor(name, age, department) {
+        // this is referring to class: name, age, dept are properties of University
+        this.name = name;
+        this.age = age;
+        this.dept = department;
+    }
+
+    display() {
+
+    }
+}
+
+const studentOne = new University('alina', 20, 'cse');//creating a object
+console.log(studentOne);
+
+const studentTwo = new University('alex', 22, 'ece');
+console.log(studentTwo);
+
+
+//inheritance
+// class parent {
+
+// }
+
+// class child extends parent {
+
+// }
+
+class Shape {
+    constructor(i) {
+        // id is prop of class Shape
+        this.id = i;
+    }
+}
+
+//child/derived
+class Circle extends Shape {
+    constructor(idVal, radius) {
+        super(idVal);//call the parent constructor
+        this.radius = radius;
+    }
+
+    circumference() {
+        console.log(2 * Math.PI * this.radius);
+    }
+}
+
+const c = new Circle(1, 5);//id, radius
+console.log(c);
+c.circumference();
+
+
+class Triangle extends Shape {
+    constructor(id, type) {
+        super(id);
+        this.type = type;
+    }
+}
+
+const t = new Triangle(2, 'Scalene');
+console.log(t);
+
+// t.circumference();//Both child can't access each other's data
+
+
+// function add (a, b) {
+
+// }
+
+// var x = 10;
+// var y = 20;
+// add(x, y);
+
+
+// Typescript
+// Interface
+
+
+
+//object literal enhancement
+//restructuring of object
+const firstName = 'alina';
+const lastName = 'Joe';
+const age = 20;
+
+const user = { firstName, lastName, age };
+
+console.log(user);
+
+
+//rest Operator (...)
+addVal = (...a) => { // [10, 20, 30, 90]
+    console.log(a);
+}
+
+addVal(10, 20, 30, 90);
+
+
+//destructuring object
+const userVal = {
+    id: 30,
+    isVerified: true
+}
+
+// const idVal = userVal.id;
+// const isVerifiedVal = userVal.isVerified; 
+
+const { id, isVerified } = userVal;
+
+console.log(id, isVerified);
+console.log(userVal);
+
+
+//Spread Operator(...)
+//for arrays & objects
+
+const objOne = {
+    A: 30,
+    B: 40
+}
+
+//shallow copy
+// const objTwo = objOne;
+// objTwo.A = 100;
+
+// console.log(objOne, objTwo);//
+
+
+// using Spread Operator: deep copy
+const objTwo = { ...objOne, Z: 20, A: 100 };
+
+console.log(objOne, objTwo);
+
+//spread operator for array
+const one = [90, 89, 80, 120];
+const two = [90, 67, 100];
+const three = [...one, ...two, 120, 100];
+console.log(three);
+
+//destructuring of arrays
+const [a, , d,] = one;
+console.log(a, d);
+
+//rest operator
+const [arrOne, ...restArray] = two;
+console.log(arrOne, restArray);
+
+//for..in
+//for..of
+
+// for in (iterate over objects)
+// for(key/property in object) {
+
+// }
+
+// considering objTwo
+for (x in objTwo) {
+    console.log(x);
+    console.log(objTwo[x]);
+}
+
+// for.. of
+//iterate over string & arrays
+
+//considering one 
+
+for(let ele of one) {
+    console.log(ele);
+}
+
+const str = 'hello';
+for(let e of str ) {
+    console.log(e);
+}
+
+
+
+
+
 
 
 
